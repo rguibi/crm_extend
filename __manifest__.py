@@ -7,7 +7,7 @@
         "crm",'sale'
     ],
     "data": [
-        "security/crm_extend.xml",
+    "security/security.xml",
     "./security/ir.model.access.csv",
     "./views/crm.xml",
     "./views/sale_order.xml",
