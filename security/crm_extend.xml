@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+         <record id="crm_extend_acces_admin" model="res.groups">
+            <field name="name">extended CRM</field>
+        </record>
+    </data>
+</odoo>

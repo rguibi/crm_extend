@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="crm_sale_order_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="priority" eval="1"/>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                    <field name="supplier_id"/>
+                    <field name="consignee"/>
+                    <field name="origin_src"/>
+                </xpath>
+
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="destination"/>
+                    <field name="service_type"/>
+                    <field name="weight"/>
+                    <field name="handling_instruction"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="crm_sale_order_line_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="priority" eval="1"/>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='name']"
+                       position="after">
+                    <field name="weight"/>
+                    <field name="height"/>
+                    <field name="lengt"/>
+                    <field name="total_weight"/>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']"
+                       position="attributes">
+                    <attribute name="string">Service</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+
+<!--         <record id="crm_sale_order_line_ship_form" model="ir.ui.view">-->
+<!--            <field name="name">sale.order.form</field>-->
+<!--            <field name="model">sale.order</field>-->
+<!--            <field name="priority" eval="1"/>-->
+<!--            <field name="inherit_id" ref="sale.view_order_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//page[@name='order_lines']" position="after">-->
+<!--                    <page name="shipment" string="Shipment">-->
+<!--                        <field name="shipement_ids"  nolabel="1">-->
+<!--                             <tree string="Menu" editable="bottom">-->
+<!--                                 <field name="product_id"/>-->
+<!--                                 <field name="product_uom_qty"/>-->
+<!--                                 <field name="weight"/>-->
+<!--                                 <field name="height"/>-->
+<!--                                 <field name="length"/>-->
+<!--                                 <field name="total_weight"/>-->
+<!--                             </tree>-->
+<!--                        </field>-->
+<!--                    </page>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
+    </data>
+</odoo>

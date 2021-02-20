@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="crm_lead_form" model="ir.ui.view">
+            <field name="name">crm.lead.form</field>
+            <field name="model">crm.lead</field>
+            <field name="priority" eval="1"/>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='team_id']" position="after">
+                            <field name="supplier_id"/>
+                            <field name="consignee"/>
+                            <field name="origin_src"/>
+                            <field name="destination"/>
+                            <field name="service_type"/>
+                            <field name="weight"/>
+                            <field name="handling_instruction"/>
+                </xpath>
+
+                <xpath expr="//page[@name='extra']" position="after">
+                    <page name="shipment" string="Shipment">
+                        <field name="shipement_ids"  nolabel="1">
+                             <tree string="Menu" editable="bottom">
+                                 <field name="product_id" string="Service"/>
+                                 <field name="product_uom_qty"/>
+                                 <field name="weight"/>
+                                 <field name="height"/>
+                                 <field name="lengt"/>
+                                 <field name="total_weight"/>
+                             </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="crm_lead_oppor_form" model="ir.ui.view">
+            <field name="name">crm.lead.form</field>
+            <field name="model">crm.lead</field>
+            <field name="priority" eval="1"/>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='team_id']" position="after">
+                            <field name="supplier_id"/>
+                            <field name="consignee"/>
+                            <field name="origin_src"/>
+                            <field name="destination"/>
+                            <field name="service_type"/>
+                            <field name="weight"/>
+                            <field name="handling_instruction"/>
+                </xpath>
+
+                <xpath expr="//page[@name='lead']" position="after">
+                    <page name="shipment" string="Shipment">
+                        <field name="shipement_ids"  nolabel="1">
+                             <tree string="Menu" editable="bottom">
+                                 <field name="product_id" string="Service"/>
+                                 <field name="product_uom_qty"/>
+                                 <field name="weight"/>
+                                 <field name="height"/>
+                                 <field name="lengt"/>
+                                 <field name="total_weight"/>
+                             </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

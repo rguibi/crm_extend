@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+crmextend_service_type,crmextend.service.type,model_crmextend_service_type,crm_extend.crm_extend_acces_admin,1,1,1,1
+crmextend_shipment_details,crmextend.shipment.details,model_crmextend_shipment_details,crm_extend.crm_extend_acces_admin,1,1,1,1
